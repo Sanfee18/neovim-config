@@ -13,15 +13,15 @@ vim.keymap.set("n", "<leader><leader>", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>th", ":Telescope colorscheme<CR>")
 vim.keymap.set("n", "<leader>of", ":Telescope oldfiles<CR>")
 vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>,", ":Telescope buffers<CR>")
 
 -- Format buffer
-vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {})
 
 -- Move between buffers
 vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>w", ":bd<CR>")
+vim.keymap.set("n", "<leader>x", ":bd<CR>")
 
 -- Comment/uncomment toggle
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
