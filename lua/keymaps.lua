@@ -19,11 +19,19 @@ vim.keymap.set("n", "<leader>,", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {})
 
 -- Move between buffers
-vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
+-- vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
+-- vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<leader>x", ":bd<CR>")
 
 -- Comment/uncomment toggle
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
 vim.keymap.set("v", "<leader>/", "gc", { remap = true })
 
+-- Map Tab to indent selected lines in visual mode
+vim.keymap.set('v', '<Tab>', '>gv', { noremap = true, silent = true })
+
+-- Map Shift-Tab to un-indent selected lines in visual mode
+vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
+
+-- Map leader + c to copy in visual mode
+vim.api.nvim_set_keymap('v', '<leader>c', '"+y', { noremap = true, silent = true })
