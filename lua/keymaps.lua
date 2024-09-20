@@ -19,8 +19,8 @@ vim.keymap.set("n", "<leader>,", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {})
 
 -- Move between buffers
--- vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
--- vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<leader>x", ":bd<CR>")
 
 -- Comment/uncomment toggle
