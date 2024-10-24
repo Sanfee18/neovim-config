@@ -1,13 +1,13 @@
 return {
-	--NOTE: TokyoNight
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		opts = {
+			transparent = true,
+		},
 	},
 
-	--NOTE: Nord
 	{
 		"gbprod/nord.nvim",
 		lazy = false,
@@ -17,13 +17,11 @@ return {
 		end,
 	},
 
-	--NOTE: One Dark
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000,
 	},
 
-	--NOTE: Monokai Pro
 	{
 		"loctvl842/monokai-pro.nvim",
 	},

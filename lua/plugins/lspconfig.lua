@@ -43,7 +43,7 @@ return {
 				vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts("Show signature help"))
 				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts("Go to type definition"))
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts "Show references")
+				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts("Show references"))
 			end
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
