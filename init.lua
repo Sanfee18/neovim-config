@@ -1,28 +1,6 @@
 require("keymaps")
 require("preferences")
 
--- Format file on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = function()
-		local mode = vim.api.nvim_get_mode().mode
-		local filetype = vim.bo.filetype
-		if vim.bo.modified == true and mode == "n" and filetype ~= "oil" then
-			vim.cmd("lua vim.lsp.buf.format()")
-		else
-		end
-	end,
-})
-
--- Highlight yanked text for a brief moment
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank({
-			higroup = "Search", -- You can change this to any highlight group (IncSearch, Visual, Search...)
-			timeout = 80, -- Time in milliseconds
-		})
-	end,
-})
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -48,4 +26,5 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("tokyonight-night")
+-- Set colorscheme
+vim.cmd("colorscheme kanagawa-wave")
