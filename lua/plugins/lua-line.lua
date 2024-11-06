@@ -26,7 +26,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "auto",
+				theme = "onedark",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
@@ -43,7 +43,7 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = {},
+				lualine_a = { "mode" },
 				lualine_b = { "branch", "diagnostics" },
 				lualine_c = { { "filename", path = 1 } },
 				lualine_x = {},

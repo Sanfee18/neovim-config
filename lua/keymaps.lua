@@ -2,12 +2,9 @@ vim.g.mapleader = " "
 
 -- Indent done with "=" operator
 
--- Map Shift + J and K to scroll half page down
-vim.keymap.set("n", "J", "<C-d>", { noremap = true, silent = true })
-vim.keymap.set("n", "K", "<C-u>", { noremap = true, silent = true })
-
 -- Open file tree
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":Neotree focus<CR>", { noremap = true, silent = true })
 
 -- Telescope bindings
 vim.keymap.set("n", "<leader><leader>", ":Telescope find_files<CR>")

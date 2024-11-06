@@ -1,5 +1,6 @@
 require("keymaps")
-require("preferences")
+require("options")
+require("autocmds")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -27,4 +28,5 @@ require("lazy").setup({
 })
 
 -- Set colorscheme
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme github_dark")
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='orange' })

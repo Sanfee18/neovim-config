@@ -1,21 +1,7 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.wrap = false
-vim.opt.expandtab = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.cursorline = true
-vim.opt.ignorecase = true
-vim.opt.splitbelow = true
-vim.opt.scrolloff = 10
-vim.opt.termguicolors = true
-vim.opt.hlsearch = false
-vim.opt.autoindent = true
-
--- vim.opt.guifont = "MesloLGM Nerd Font"
-
 -- This if so that the new line isn't a comment.
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+
+vim.api.nvim_set_hl(0, 'LineNr', { fg = "#4b5263" })
 
 -- Highlight yanked text for a brief moment
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -36,5 +22,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
       require('telescope.builtin').find_files()
     end
   end
+})
+
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = {"*"},
+    callback = function()
+      local save_cursor = vim.fn.getpos(".")
+      pcall(function() vim.cmd [[%s/\s\+$//e]] end)
+      vim.fn.setpos(".", save_cursor)
+    end,
 })
 
